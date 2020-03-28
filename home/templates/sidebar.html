@@ -1,0 +1,171 @@
+{% load static %}
+<div id="wrapper">
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="span4">
+                    <aside class="left-sidebar">
+                        <div class="widget">
+                            <form class="form-search">
+                                <input placeholder="Type something" type="text" class="input-medium search-query">
+                                <button type="submit" class="btn btn-square btn-theme">Search</button>
+                            </form>
+                        </div>
+                        <div class="widget">
+                            <h5 class="widgetheading">Categories</h5>
+                            <ul class="cat">
+                                <li><i class="icon-angle-right"></i><a href="#">Web design</a><span> (20)</span></li>
+                                <li><i class="icon-angle-right"></i><a href="#">Online business</a><span> (11)</span></li>
+                                <li><i class="icon-angle-right"></i><a href="#">Marketing strategy</a><span> (9)</span></li>
+                                <li><i class="icon-angle-right"></i><a href="#">Technology</a><span> (12)</span></li>
+                                <li><i class="icon-angle-right"></i><a href="#">About finance</a><span> (18)</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="widget">
+                            <h5 class="widgetheading">Popular tags</h5>
+                            <ul class="tags">
+                                <li><a href="#">Web design</a></li>
+                                <li><a href="#">Trends</a></li>
+                                <li><a href="#">Technology</a></li>
+                                <li><a href="#">Internet</a></li>
+                                <li><a href="#">Tutorial</a></li>
+                                <li><a href="#">Development</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+                <div class="span8">
+                    <article>
+                        <div class="row">
+                            <div class="span8">
+                                <div class="post-image">
+                                    <div class="post-heading">
+                                        <!-- Portfolio Projects -->
+                                        <div class="row">
+                                            <div class="span8">
+                                                <h4 class="heading">Some of recent <strong>works</strong></h4>
+                                                <div class="row">
+                                                    <section id="projects">
+                                                        <ul id="thumbs" class="portfolio">
+                                                            <!-- Item Project and Filter Name -->
+                                                            <div class="span2">
+                                                                <li class="item-thumbs span2 design" data-id="id-0" data-type="web">
+                                                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" href="{% static 'img/works/full/image-01-full.jpg' %}">
+                                                                        <span class="overlay-img"></span>
+                                                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                                                    </a>
+                                                                    <!-- Thumb Image and Description -->
+                                                                    <img src="{% static 'img/works/thumbs/image-01.jpg' %}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                                                </li>
+                                                                <!-- End Item Project -->
+                                                            </div>
+                                                            <!-- Item Project and Filter Name -->
+                                                            <div class="span2">
+                                                                <li class="item-thumbs span2 design" data-id="id-1" data-type="icon">
+                                                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" href="{% static 'img/works/full/image-02-full.jpg' %}">
+                                                                        <span class="overlay-img"></span>
+                                                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                                                    </a>
+                                                                    <!-- Thumb Image and Description -->
+                                                                    <img src="{% static 'img/works/thumbs/image-02.jpg' %}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                                                </li>
+                                                            </div>
+                                                            <!-- End Item Project -->
+                                                            <!-- Item Project and Filter Name -->
+                                                            <div class="span2">
+                                                                <li class="item-thumbs span2 photography" data-id="id-2" data-type="illustrator">
+                                                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{% static 'img/works/full/image-03-full.jpg' %}">
+                                                                        <span class="overlay-img"></span>
+                                                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                                                    </a>
+                                                                    <!-- Thumb Image and Description -->
+                                                                    <img src="{% static 'img/works/thumbs/image-03.jpg' %}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                                                </li>
+                                                            </div>
+                                                            <!-- End Item Project -->
+                                                            <!-- Item Project and Filter Name -->
+                                                            <div class="span2">
+                                                                <li class="item-thumbs span2 photography" data-id="id-2" data-type="illustrator">
+                                                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{% static 'img/works/full/image-04-full.jpg' %}">
+                                                                        <span class="overlay-img"></span>
+                                                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                                                    </a>
+                                                                    <!-- Thumb Image and Description -->
+                                                                    <img src="{% static 'img/works/thumbs/image-04.jpg' %}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                                                </li>
+                                                            </div>
+                                                            <!-- End Item Project -->
+                                                            <!-- Item Project and Filter Name -->
+                                                            <div class="span2">
+                                                                <li class="item-thumbs span2 photography" data-id="id-4" data-type="web">
+                                                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" href="{% static 'img/works/full/image-05-full.jpg' %}">
+                                                                        <span class="overlay-img"></span>
+                                                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                                                    </a>
+                                                                    <!-- Thumb Image and Description -->
+                                                                    <img src="{% static 'img/works/thumbs/image-05.jpg' %}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                                                </li>
+                                                            </div>
+                                                            <!-- End Item Project -->
+                                                            <!-- Item Project and Filter Name -->
+                                                            <div class="span2">
+                                                                <li class="item-thumbs span2 photography" data-id="id-5" data-type="icon">
+                                                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Clouds" href="{% static 'img/works/full/image-06-full.jpg' %}">
+                                                                        <span class="overlay-img"></span>
+                                                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                                                    </a>
+                                                                    <!-- Thumb Image and Description -->
+                                                                    <img src="{% static 'img/works/thumbs/image-06.jpg' %}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                                                </li>
+                                                            </div>
+                                                            <!-- End Item Project -->
+                                                            <!-- Item Project and Filter Name -->
+                                                            <div class="span2">
+                                                                <li class="item-thumbs span2 photography" data-id="id-2" data-type="illustrator">
+                                                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{% static 'img/works/full/image-07-full.jpg' %}">
+                                                                        <span class="overlay-img"></span>
+                                                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                                                    </a>
+                                                                    <!-- Thumb Image and Description -->
+                                                                    <img src="{% static 'img/works/thumbs/image-07.jpg' %}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                                                </li>
+                                                            </div>
+                                                            <!-- End Item Project -->
+                                                            <!-- Item Project and Filter Name -->
+                                                            <div class="span2">
+                                                                <li class="item-thumbs span2 design" data-id="id-0" data-type="web">
+                                                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Dark" href="{% static 'img/works/full/image-08-full.jpg' %}">
+                                                                        <span class="overlay-img"></span>
+                                                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                                                    </a>
+                                                                    <!-- Thumb Image and Description -->
+                                                                    <img src="{% static 'img/works/thumbs/image-08.jpg' %}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                                                </li>
+                                                            </div>
+                                                            <!-- End Item Project -->
+                                                        </ul>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Portfolio Projects -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</div>

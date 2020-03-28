@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% block title %} Anasayfa {% endblock %}</title>
+    <meta name="description" content="{% block description %} Anasayfa kısa açıklama {% endblock %}" />
+    <meta name="keywords" content="{% block keywords %} Anasayfa anahtar kelimeler {% endblock %}" />
+    <meta name="author" content="" />
+
+    <!-- css -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet">
+    {% load static %}
+    <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet" />
+    <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/fancybox/jquery.fancybox.css' %}" rel="stylesheet">
+    <link href="{% static 'css/jcarousel.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/flexslider.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- Theme skin -->
+    <link href="{% static 'skins/default.css' %}" rel="stylesheet" />
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'ico/apple-touch-icon-144-precomposed.png' %}" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'ico/apple-touch-icon-114-precomposed.png' %}" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'ico/apple-touch-icon-72-precomposed.png' %}" />
+    <link rel="apple-touch-icon-precomposed" href="{% static 'ico/apple-touch-icon-57-precomposed.png' %}" />
+    <link rel="shortcut icon" href="{% static 'ico/favicon.png' %}" />
+
+    <!-- =======================================================
+      Theme Name: Flattern
+      Theme URL: https://bootstrapmade.com/flattern-multipurpose-bootstrap-template/
+      Author: BootstrapMade.com
+      Author URL: https://bootstrapmade.com
+    ======================================================= -->
+
+   {% block head %}  {% endblock %}
+</head>
+<body>
+    {% include 'header.html' %}
+    {% block slider %}  {% endblock %}
+    {% block sidebar %}  {% endblock %}
+    {% block content %}  {% endblock %}
+    {% block body %}  {% endblock %}
+    {% include 'footer.html' %},
+    {% block footer %}  {% endblock %}
+
+</body>
+
+</html>
