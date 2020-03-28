@@ -1,1 +1,1 @@
-"# Django ˜Ÿ ˜lanlar Sitesi Projesi" 
+"# Django Is IlanlarÄ± Sitesi Projesi" 
