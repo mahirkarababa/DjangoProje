@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="42af780f-ca6f-4c79-b0a1-5f854760af1b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +20,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="mahirkarababa &lt;mahirkarababa09@gmail.com&gt;" />
         <option value="Mahir Karababa" />
       </list>
     </option>
@@ -56,13 +56,25 @@
       <option name="presentableId" value="Default" />
       <updated>1584784109984</updated>
     </task>
+    <task id="LOCAL-00001" summary="Header Degişti">
+      <created>1585410770967</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585410770967</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Header Degişti" />
+    <option name="LAST_COMMIT_MESSAGE" value="Header Degişti" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1585410739060">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1585410769692">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1585410739060" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1585410769692" />
     <state x="183" y="22" key="SettingsEditor" timestamp="1585389865694">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -71,9 +83,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="378" y="192" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1585388011240" />
-    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585410623267">
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585410788324">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1585410623267" />
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1585410788324" />
   </component>
 </project>
