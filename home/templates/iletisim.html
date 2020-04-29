@@ -1,0 +1,70 @@
+{% extends "homebase.html" %}
+
+{% block title %} İletişim - {{ setting.company }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>İletişim</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">İletişim</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="span6">
+                <h4>Bizimle İletişime<strong>Geçin</strong></h4>
+                <hr>
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{message.tags}}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                     <button class="btn btn-large btn-theme margintop10" type="submit">SEND FORM</button>
+                </form>
+
+            </div>
+            <div class="span6">
+                <h4>İletişim</h4>
+                <hr>
+                {{setting.contact|safe}}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

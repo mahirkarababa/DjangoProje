@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42af780f-ca6f-4c79-b0a1-5f854760af1b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/home/templates/hakkimizda.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/referanslarimiz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,11 +47,12 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\project1\home\templates" />
       <recent name="C:\Django\project1\product" />
     </key>
   </component>
@@ -74,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585410898543</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ckeditor yüklendi">
+      <created>1588088096332</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588088096332</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -82,7 +96,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -90,13 +106,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Header Degişti" />
-    <option name="LAST_COMMIT_MESSAGE" value="Header Degişti" />
+    <MESSAGE value="Ckeditor yüklendi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ckeditor yüklendi" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1585410897341">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1588088093666">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1585410897341" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588088093666" />
     <state x="92" y="92" width="1182" height="554" key="DiffContextDialog" timestamp="1585411014492">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -109,15 +126,15 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="183" y="22" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1585389865694" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1588088043353">
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1588088124917">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588088043353" />
-    <state x="378" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1588080956671">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588088124917" />
+    <state x="378" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1588160800150">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588080956671" />
-    <state x="378" y="192" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1585388011240" />
+    <state x="378" y="192" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1588160800150" />
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588088022163">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
