@@ -1,5 +1,6 @@
 {% load static %}
 <div id="wrapper">
+
     <section id="featured">
         <!-- start slider -->
         <!-- Slider -->
@@ -9,7 +10,7 @@
             <div class="da-slide">
                 <h2>{{ rs.title }}</h2>
                 <p>
-                   {{ rs.description}}
+                    {{ rs.description}}
                 </p>
                 <a href="/product/{{ rs.id }}/{{ rs.slug }}" class="da-link">BAŞVUR</a>
                 <div class="da-img">
@@ -26,3 +27,4 @@
         <!-- end slider -->
     </section>
 </div>
+<hr>

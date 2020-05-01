@@ -29,7 +29,7 @@ urlpatterns = [
     path('referanslar', views.referanslar, name='referanslar'),
     path('iletisim', views.iletisim, name='iletisim'),
     path('admin/', admin.site.urls),
-    path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
