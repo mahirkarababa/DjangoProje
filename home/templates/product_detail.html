@@ -1,0 +1,117 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ product.title }} {% endblock %}
+{% block keywords %} {{ product.keywords }} {% endblock %}
+{% block description %} {{ product.description }} {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>İlan Detay</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active"><a href="/">Product</a><i class="icon-angle-right"></i></li>
+                    <li class="active"><a href="/category/{{ product.category_id }}/{{ product.category.slug }}">{{ product.category }}</a><i class="icon-angle-right"></i></li>
+                    <li class="active">{{ product.title }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+
+
+            <div class="span6">
+                <article>
+                    <div class="top-wrapper">
+
+                        <!-- start flexslider -->
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="{{ product.image.url }}" alt="" />
+                                </li>
+                                {% for rs in images %}
+                                <li>
+                                    <img src="{{ rs.image.url }}" alt="" />
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            <nav class="da-arrows">
+                                <span class="da-arrows-prev"></span>
+                                <span class="da-arrows-next"></span>
+                            </nav>
+                        </div>
+                        <!-- end flexslider -->
+                    </div>
+
+                </article>
+            </div>
+            <div class="span6">
+                <aside class="right-sidebar">
+                    <div class="widget">
+                        <h5 class="widgetheading">{{ product.title }}</h5>
+                        <ul class="folio-detail">
+                            <li><label>Category : </label>{{ product.category }} </li>
+                            <li><label>Client : </label> {{ product.company}}</li>
+                            <li><label>Salary : </label> {{ product.salary}} &#36; / Month</li>
+                            <li>{{ product.description}}</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-action">
+                        <a href="/product/{{ rs.id }}/{{ rs.slug }}" class="btn btn-medium btn-theme"><i class="icon-bolt"></i> BAŞVUR</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+            <div class="span12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#one" data-toggle="tab"><i class="icon-briefcase"></i> Detail</a></li>
+                    <li><a href="#two" data-toggle="tab">Two</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="one">
+                        <p>
+                            {{ product.detail | safe}}
+                        </p>
+
+                    </div>
+                    <div class="tab-pane active" id="two">
+                        <p>
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

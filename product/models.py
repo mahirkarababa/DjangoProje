@@ -47,10 +47,11 @@ class Product(models.Model):
         ('True', 'Evet'),
         ('False', 'Hayır'),
     )
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)  #relation with Category table
+    category = models.ForeignKey(Category, on_delete=models.CASCADE )  #relation with Category table
     title = models.CharField(max_length=150)
     description = models.CharField(blank=True,max_length=255)
     keywords = models.CharField(blank=True,max_length=255)
+    company = models.CharField(blank=True, max_length=100)
     slug = models.SlugField(blank=True,max_length=150)
     image = models.ImageField(blank=True, upload_to='images/')
     salary = models.FloatField()
