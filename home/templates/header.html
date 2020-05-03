@@ -16,7 +16,24 @@
     </div>
     <!-- end toggle top area -->
 
+ <script>
 
+  $(function() {
+    $("#query").autocomplete({
+      source: "/search_auto/",
+      select: function (event, ui) { //item selected
+        AutoCompleteSelectHandler(event, ui)
+      },
+      minLength: 2,
+    });
+  });
+
+  function AutoCompleteSelectHandler(event, ui)
+  {
+    var selectedObj = ui.item;
+  }
+
+            </script>
     <!-- start header -->
     <!-- start header -->
     <header>
@@ -134,10 +151,13 @@
             </div>
             <div class="row">
                 <div class="span4">
-                    <div class="logo">
-                        <a href="/"><img src="{% static 'img/logo.png' %}" alt="" class="logo" /></a>
-                        <h1>Flat and trendy bootstrap template</h1>
-                    </div>
+                   <div class="widget">
+                    <form action="/search/" method="post">
+                        {% csrf_token %}
+                        <input id="query" name="query" placeholder="Type something" type="text" class="input-medium search-query">
+                        <button type="submit" class="btn btn-square btn-theme">Search</button>
+                    </form>
+                </div>
                 </div>
                 <div class="span8">
 

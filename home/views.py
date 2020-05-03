@@ -93,13 +93,13 @@ def product_search(request):
 
 
             query = form.cleaned_data['query']  # formdan bilgiyi al
-            #catid = form.cleaned_data['catid']
-            products = Product.objects.filter(title__icontains=query)
+            catid = form.cleaned_data['catid']
+            #products = Product.objects.filter(title__icontains=query)
 
-            #if catid == 0:
-                #products = Product.objects.filter(title__icontains=query)
-            #else:
-                #products = Product.objects.filter(title__icontains=query,category_id=catid)
+            if catid == 0:
+                products = Product.objects.filter(title__icontains=query)
+            else:
+                products = Product.objects.filter(title__icontains=query,category_id=catid)
 
 
             context = {'products': products,
