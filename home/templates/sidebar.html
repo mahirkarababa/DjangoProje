@@ -1,4 +1,9 @@
 {% load static %}
+
+
+
+
+
 <div id="wrapper" style=" height:50px">
     <div class="container ">
         <div class="row">
@@ -39,11 +44,29 @@
 
                 </div>
             </div>
+            <script>
+
+  $(function() {
+    $("#query").autocomplete({
+      source: "/search_auto/",
+      select: function (event, ui) { //item selected
+        AutoCompleteSelectHandler(event, ui)
+      },
+      minLength: 2,
+    });
+  });
+
+  function AutoCompleteSelectHandler(event, ui)
+  {
+    var selectedObj = ui.item;
+  }
+
+            </script>
             <div class="span6">
                 <div class="widget">
                     <form action="/search/" method="post">
                         {% csrf_token %}
-                        <input name="query" placeholder="Type something" type="text" class="input-medium search-query">
+                        <input id="query" name="query" placeholder="Type something" type="text" class="input-medium search-query">
                         <button type="submit" class="btn btn-square btn-theme">Search</button>
                     </form>
                 </div>

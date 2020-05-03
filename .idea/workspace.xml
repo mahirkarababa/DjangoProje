@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42af780f-ca6f-4c79-b0a1-5f854760af1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/products_search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Mahir_Karababa.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/products_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/products_search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +48,9 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -136,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588438711337</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Search Kısmı Yapıldı">
+      <created>1588517409945</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1588517409945</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,13 +167,14 @@
     <MESSAGE value="Slidera ürün eklendi" />
     <MESSAGE value="Alt Kategori Yapıldı" />
     <MESSAGE value="Product details sayfası oluştu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Product details sayfası oluştu" />
+    <MESSAGE value="Search Kısmı Yapıldı" />
+    <option name="LAST_COMMIT_MESSAGE" value="Search Kısmı Yapıldı" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1588438710078">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1588525768263">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588438710078" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588525768263" />
     <state x="92" y="92" width="1182" height="554" key="DiffContextDialog" timestamp="1585411014492">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -175,19 +183,19 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1585411132286" />
-    <state x="183" y="22" key="SettingsEditor" timestamp="1588432854080">
+    <state x="450" y="30" width="916" height="708" key="SettingsEditor" timestamp="1588523771737">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="183" y="22" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1588432854080" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1588438714253">
+    <state x="450" y="30" width="916" height="708" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1588523771737" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1588517413722">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588438714253" />
-    <state x="378" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1588507289317">
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588517413722" />
+    <state x="378" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1588523672882">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588080956671" />
-    <state x="378" y="192" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1588507289317" />
+    <state x="378" y="192" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1588523672882" />
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588088022163">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
