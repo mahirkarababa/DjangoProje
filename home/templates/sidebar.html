@@ -2,7 +2,7 @@
 <div id="wrapper" style=" height:50px">
     <div class="container ">
         <div class="row">
-            <div class="span12">
+            <div class="span6">
                 <div class="navbar navbar-static-top">
                     <div class="navigation">
                         <nav>
@@ -36,6 +36,16 @@
                         </nav>
                     </div>
                     <!-- end navigation -->
+
+                </div>
+            </div>
+            <div class="span6">
+                <div class="widget">
+                    <form action="/search/" method="post">
+                        {% csrf_token %}
+                        <input name="query" placeholder="Type something" type="text" class="input-medium search-query">
+                        <button type="submit" class="btn btn-square btn-theme">Search</button>
+                    </form>
                 </div>
             </div>
         </div>

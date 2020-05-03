@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-
+{% load static %}
 <section id="inner-headline">
     <div class="container">
         <div class="row">
@@ -70,6 +70,7 @@
                 <aside class="right-sidebar">
                     <div class="widget">
                         <h5 class="widgetheading">{{ product.title }}</h5>
+
                         <ul class="folio-detail">
                             <li><label>Category : </label>{{ product.category }} </li>
                             <li><label>Client : </label> {{ product.company}}</li>
@@ -89,29 +90,83 @@
 <section id="content">
     <div class="container">
         <div class="row">
+            <div class="tabbable tabs-left">
+                <div class="span12">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#topone" data-toggle="tab"> Detail</a></li>
+                        <li><a href="#toptwo" data-toggle="tab">Comments</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="topone">
+                            <p>
+                                {{ product.detail | safe}}
+                            </p>
 
-            <div class="span12">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#one" data-toggle="tab"><i class="icon-briefcase"></i> Detail</a></li>
-                    <li><a href="#two" data-toggle="tab">Two</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="one">
-                        <p>
-                            {{ product.detail | safe}}
-                        </p>
+                        </div>
+                        <div class="tab-pane" id="toptwo">
+                            <div class="row">
+                                <div class="span4">
+                                    {% if messages %}
+                                         {% for message in messages %}
+                                            <div class="alert alert-{{message.tags}}">
+                                                 {{ message }}
+                                            </div>
+                                         {% endfor %}
+                                    {% endif %}
 
-                    </div>
-                    <div class="tab-pane active" id="two">
-                        <p>
-
-                        </p>
-
+                                    <form action="/product/addcomment/{{ product.id }}" method="post" role="form" class="contactForm">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="span4 form-group">
+                                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                                <div class="validation"></div>
+                                            </div>
+                                            <div class="span4 margintop10 form-group">
+                                                <textarea class="form-control" name="comment" id="comment" rows="12" data-rule="required" data-msg="Please write something for us" placeholder="Your Comment"></textarea>
+                                                <div class="validation"></div>
+                                                <p class="text-center">
+                                                    {% if user.id is not None %}
+                                                    <button class="btn btn-large btn-theme margintop10" type="submit">Submit Comment</button>
+                                                    {% else %}
+                                                    Yorum Eklemek için <a href="/login">Login</a>  Olunuz
+                                                    {% endif %}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="span7">
+                                    {% for rs in comments %}
+                                    <div class="wrapper">
+                                        <div class="testimonial">
+                                            <b>{{ rs.subject }}</b>
+                                            <p class="text">
+                                                <i class="icon-comment"></i>
+                                                {{ rs.comment }}
+                                            </p>
+                                            <div class="author">
+                                                <img src="{% static 'img/dummies/testimonial-author1.png' %}" class="img-circle bordered" alt="" />
+                                                <p class="name">
+                                                    {{ rs.user.first_name }} {{ rs.user.last_name }}
+                                                </p>
+                                                <span class="info"> <i class="icon-envelope-alt"> {{ rs.user.email}} </i> -  <i class="icon-time"> {{ rs.create_at }}</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                    <div id="pagination">
+                                        <span class="all">Page 1 of 3</span>
+                                        <span class="current">1</span>
+                                        <a href="#" class="inactive">2</a>
+                                        <a href="#" class="inactive">3</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 {% endblock %}
