@@ -1,3 +1,3 @@
 "# Django Is Ilanları Sitesi Projesi" 
 
-"#18. Videoya kadar yapıldı"
+"#23. Videoya kadar yapıldı"
