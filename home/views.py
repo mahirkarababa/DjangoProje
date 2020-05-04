@@ -1,6 +1,7 @@
 import json
 
 from django.contrib import messages
+from django.contrib.auth import logout, authenticate, login
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
@@ -89,27 +90,24 @@ def product_search(request):
     if request.method == "POST":
         form = SearchForm(request.POST)
         if form.is_valid():
-            category = Category.objects.all()
-
 
             query = form.cleaned_data['query']  # formdan bilgiyi al
-            catid = form.cleaned_data['catid']
-            #products = Product.objects.filter(title__icontains=query)
+            #catid = form.cleaned_data['catid']
 
-            if catid == 0:
-                products = Product.objects.filter(title__icontains=query)
-            else:
-                products = Product.objects.filter(title__icontains=query,category_id=catid)
+            products = Product.objects.filter(title__icontains=query)
 
-
+            #if catid == 0:
+                #products = Product.objects.filter(title__icontains=query)
+            #else:
+                #products = Product.objects.filter(title__icontains=query,category_id=catid)
+            category = Category.objects.all()
             context = {'products': products,
+                       'query': query,
                        'category': category,
                        }
             return render(request, 'products_search.html', context)
+
     return HttpResponseRedirect('/')
-
-
-
 
 def product_search_auto(request):
     if request.is_ajax():
@@ -121,8 +119,35 @@ def product_search_auto(request):
             product_json = rs.title
             results.append(product_json)
         data = json.dumps(results)
+        return HttpResponse(q)
     else:
         data = 'fail'
     mimetype = 'application/json'
-    return HttpResponse(data, mimetype)
+    return HttpResponse(data,mimetype)
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect('/')
+        else:
+            messages.error(request, " Login Hatası! Kullanıcı adı veya şifre yanlış ")
+            return HttpResponseRedirect('/login')
+
+    category = Category.objects.all()
+    context = {
+               'category': category,
+               }
+    return render(request, 'login.html', context)
+
+
+
+
 

@@ -1,0 +1,84 @@
+{% extends "homebase.html" %}
+
+{% block title %} Login {{ setting.company }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>Giriş</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">İletişim</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="span12">
+                <h4 id="mySigninModalLabel">Login to your <strong>account</strong></h4>
+                <hr>
+
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+
+                        <form action="" method="post">
+
+                            {% csrf_token %}
+
+
+                            <div class="control-group">
+                                <label class="control-label" for="inputText">Username</label>
+                                <div class="controls">
+                                    <input type="text" name="username" id="inputText" placeholder="Username">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputSigninPassword">Password</label>
+                                <div class="controls">
+                                    <input type="password" name="password" id="inputSigninPassword" placeholder="Password">
+                                </div>
+                            </div>
+
+
+
+                            <!-- end signin modal -->
+                            <button class="btn btn-large btn-theme margintop10" type="submit">GİRİŞ YAP</button>
+
+                        </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
