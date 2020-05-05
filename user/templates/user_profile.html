@@ -1,0 +1,87 @@
+{% extends "homebase.html" %}
+
+{% block title %}{{ profile.user_name }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>User Profile</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">Profile</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="span12">
+                {% include "user_panel.html" %}
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="span12">
+
+                <table class="table table-bordered">
+
+                    <tr>
+                       <td ><img src="{{ profile.image.url }}" style="height:100px; width:100px;"></td>
+                    </tr>
+                    <tr class="success">
+                        <th>Name Surname</th>
+                        <td>{{ profile.user.first_name}} {{ profile.user.last_name}}</td>
+                    </tr>
+                    <tr class="warning">
+                        <th>Email</th>
+                        <td>{{ profile.user.email}}</td>
+                    </tr>
+                    <tr class="success">
+                        <th>Phone</th>
+                        <td>{{ profile.phone}}</td>
+                    </tr>
+                    <tr class="warning">
+                        <th>Address</th>
+                        <td>{{ profile.address}}</td>
+                    </tr>
+                    <tr class="success">
+                        <th>City</th>
+                        <td>{{ profile.city}}</td>
+                    </tr>
+                    <tr class="warning">
+                        <th>Country</th>
+                        <td>{{ profile.country}}</td>
+                    </tr>
+
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+</section>
+
+
+{% endblock %}
