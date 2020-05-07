@@ -1,29 +1,16 @@
 {% load static %}
 <div id="wrapper">
-    <!-- toggle top area -->
-    <div class="hidden-top">
-        <div class="hidden-top-inner container">
-            <div class="row">
-                <div class="span12">
-                    <ul>
-                        <li><strong>İş Bulmanız İçin Buradayız</strong></li>
-                        <li>Main office: Aydın Türkiye</li>
-                        <li>Call us <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end toggle top area -->
 
 
-    <!-- start header -->
+
+
     <!-- start header -->
     <header>
         <div class="container ">
             <!-- hidden top area toggle link -->
             <div id="header-hidden-link">
-                <a href="#" class="toggle-link" title="Click me you'll get a surprise" data-target=".hidden-top"><i></i>Open</a>
+                <a href="/shopcart/" class="btn btn-primary" title="My Charts"><i class="icon-briefcase"></i> <strong>My Charts:</strong> {{ request.session.cart_items }} </a>
+
             </div>
             <!-- end toggle link -->
             <div class="row nomargin">
@@ -34,10 +21,11 @@
                         <div class="navbar navbar-static-top">
                             <ul class="nav topnav">
                                 <li class="dropdown">
-                                    <a href="#mySignup" data-toggle="modal"><img src="{{ request.user.profile.image.url }}" style="height:30px; width:30px;"> {{ user.first_name }} {{ user.last_name }}</a>
+                                    <a href="#mySignup" data-toggle="modal"><img src="{{ request.current_user.image.url }}" style="height:30px; width:30px;"> {{ user.first_name }} {{ user.last_name }}</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="/user/"><i class="icon-user"></i> Hesabım</a></li>
-                                        <li><a href="table.html"><i class="icon-bookmark"></i>Başvurularım</a></li>
+                                        <li><a href="/shopcart/"><i class="icon-briefcase"></i>Sepet</a></li>
+                                        <li><a href="#"><i class="icon-bookmark"></i>Başvurularım</a></li>
                                         <li><a href="components.html"><i class="icon-comment"></i> Yorumlarım</a></li>
                                         <li><a href="/logout/"><i class="icon-signout"></i>Çıkış Yap</a></li>
                                     </ul>

@@ -1,0 +1,77 @@
+{% extends "homebase.html" %}
+
+{% block title %} ShopCard {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span6">
+                <div class="inner-heading">
+                    <h2>Shopcart Product List</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span6">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">ShopCart</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+            <div class="span12">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Product</th>
+                        <th>Salary</th>
+                        <th>Quantity</th>
+                        <th></th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for rs in shopcart %}
+                    <tr>
+                        <td><img src="{{ rs.product.image.url }}" style="height:50px; width:50px;"></a> </td>
+                        <td>  {{ rs.product }}</td>
+                        <td> &#36; {{ rs.product.salary }} </td>
+                        <td>  {{ rs.quantity }}</td>
+                        <td><a href="/order/deletefromcart/{{ rs.id }}" class="btn btn-red" onclick="return confirm('Are you sure?')"><i class="icon-minus"></i></a> </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

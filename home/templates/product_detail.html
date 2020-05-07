@@ -68,6 +68,13 @@
             </div>
             <div class="span6">
                 <aside class="right-sidebar">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{message.tags}}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
                     <div class="widget">
                         <h5 class="widgetheading">{{ product.title }}</h5>
 
@@ -78,9 +85,16 @@
                             <li>{{ product.description}}</li>
                         </ul>
                     </div>
+
                     <div class="pricing-action">
-                        <a href="/product/{{ rs.id }}/{{ rs.slug }}" class="btn btn-medium btn-theme"><i class="icon-bolt"></i> BAŞVUR</a>
+                        <form action="/order/addtocart/{{ product.id }}" method="post">
+                            {% csrf_token %}
+                            <span class="text-uppercase">Adet: </span>
+                            <input name="quantity" class="input" type="number" min="0" max="1" value="1">
+                            <button type="submit" class="btn btn-medium btn-theme"><i class="icon-briefcase"></i> BAŞVUR</button>
+                        </form>
                     </div>
+
                 </aside>
             </div>
         </div>
@@ -107,11 +121,11 @@
                             <div class="row">
                                 <div class="span4">
                                     {% if messages %}
-                                         {% for message in messages %}
-                                            <div class="alert alert-{{message.tags}}">
-                                                 {{ message }}
-                                            </div>
-                                         {% endfor %}
+                                    {% for message in messages %}
+                                    <div class="alert alert-{{message.tags}}">
+                                        {{ message }}
+                                    </div>
+                                    {% endfor %}
                                     {% endif %}
 
                                     <form action="/product/addcomment/{{ product.id }}" method="post" role="form" class="contactForm">
@@ -135,6 +149,7 @@
                                         </div>
                                     </form>
                                 </div>
+
                                 <div class="span7">
                                     {% for rs in comments %}
                                     <div class="wrapper">
