@@ -1,0 +1,144 @@
+{% extends "homebase.html" %}
+
+{% block title %} Orders {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>İletişim</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">İletişim</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="span12">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                <h4><strong>Detail</strong></h4>
+                <hr>
+                <form action="" method="post" role="form" class="contactForm">
+                    {% csrf_token %}
+
+                    <div class="row">
+                        <div class="span12 form-group">
+                            <label for="id_first_name">First Name:</label>
+                            <input type="text" name="first_name" value="{{ user.first_name }}" class="form-control" id="id_first_name"   />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="span12 form-group">
+                            <label for="id_last_name">Last Name:</label>
+                            <input type="text" name="last_name" value="{{ user.last_name }}" class="form-control" id="id_last_name"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="span12 form-group">
+                            <label for="id_adress">Adress:</label>
+                            <input type="text" name="adress" value="{{ profile.address }}" class="form-control" id="id_adress"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="span12 form-group">
+                            <label for="id_phone">Phone: </label>
+                            <input type="text" name="phone" value="{{ profile.phone }}" class="form-control" id="id_phone" />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="span12 form-group">
+                            <label for="id_city">City </label>
+                            <select name="city" id="id_city">
+                                <option value="{{ profile.city }}" selected>{{ profile.city }}</option>
+                                <option value="İstanbul">İstanbul</option>
+                                <option value="Ankara">Ankara</option>
+                                <option value="Antalya">Antalya</option>
+                                <option value="İzmir">İzmir</option>
+                                <option value="Aydın">Aydın</option>
+                            </select>
+
+                            <div class="validation"></div>
+                        </div>
+                        <div class="span12 form-group">
+                            <label for="id_country">Country: </label>
+                            <input type="text" name="country" value="{{ profile.country }}" class="form-control" id="id_country" />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="pull-right">
+                            <button type="submit" class="btn btn-medium btn-theme">Başvuruyu Tamamla</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+            <div class="span12">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Product</th>
+                        <th>Salary</th>
+                        <th>Quantity</th>
+                        <th></th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for rs in shopcart %}
+                    <tr>
+                        <td><img src="{{ rs.product.image.url }}" style="height:50px; width:50px;"></a> </td>
+                        <td>  {{ rs.product }}</td>
+                        <td> &#36; {{ rs.product.salary }} </td>
+                        <td>  {{ rs.quantity }}</td>
+                        <td><a href="/order/deletefromcart/{{ rs.id }}" class="btn btn-red" onclick="return confirm('Are you sure?')"><i class="icon-minus"></i></a> </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div class="pull-right">
+                    <a href="/order/orderproduct" class="btn btn-medium btn-theme"> BAŞVUR</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

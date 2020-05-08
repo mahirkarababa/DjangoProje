@@ -1,0 +1,58 @@
+{% extends "homebase.html" %}
+
+{% block title %} Orders {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>İletişim</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">İletişim</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="span12">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                <h4><strong>Detail</strong></h4>
+                <hr>
+                <p><strong>Name:    {{ user.first_name}} {{user.last_name}}</strong></p>
+                <p><strong>Code:    {{ ordercode }}</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
