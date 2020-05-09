@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42af780f-ca6f-4c79-b0a1-5f854760af1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="42af780f-ca6f-4c79-b0a1-5f854760af1b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,7 +89,7 @@
       <workItem from="1588793291073" duration="403000" />
       <workItem from="1588848087167" duration="14918000" />
       <workItem from="1588943180020" duration="8681000" />
-      <workItem from="1589020733252" duration="369000" />
+      <workItem from="1589020733252" duration="669000" />
     </task>
     <task id="LOCAL-00001" summary="Header Degişti">
       <created>1585410770967</created>
@@ -219,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588951858812</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Başvuru Tamamlama Yapıldı">
+      <created>1589021154078</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1589021154078</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,10 +267,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="442" y="171" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1588684361554" />
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1588951855289">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1589021147853">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588951855289" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1589021147853" />
     <state x="213" y="23" key="DBNavigator.ProjectSettingsDialog" timestamp="1588684788228">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -306,10 +311,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="424" y="17" width="916" height="708" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1588849018327" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1588951874406">
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1589021157123">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588951874406" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1589021157123" />
     <state x="378" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1588791222655">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -323,6 +328,14 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="0" width="736" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1588682333089" />
+    <state x="380" y="157" key="git4idea.merge.GitPullDialog" timestamp="1589021408823">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="380" y="157" key="git4idea.merge.GitPullDialog/0.0.1366.738@0.0.1366.738" timestamp="1589021408823" />
+    <state x="463" y="270" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1589021368800">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="270" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1366.738@0.0.1366.738" timestamp="1589021368800" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1588511233476">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
