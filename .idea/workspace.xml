@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42af780f-ca6f-4c79-b0a1-5f854760af1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/order/templates/Order_Complated.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/Order_Form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/templates/shopcart_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/shopcart_products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +55,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="views" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="project1" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="project1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -75,7 +68,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/order/views.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -97,7 +90,8 @@
       <updated>1584784109984</updated>
       <workItem from="1588793291073" duration="403000" />
       <workItem from="1588848087167" duration="14918000" />
-      <workItem from="1588943180020" duration="8488000" />
+      <workItem from="1588943180020" duration="8681000" />
+      <workItem from="1589020733252" duration="369000" />
     </task>
     <task id="LOCAL-00001" summary="Header Degişti">
       <created>1585410770967</created>
@@ -218,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588863948691</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Başvuru Tamamlama Yapıldı">
+      <created>1588951858812</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1588951858812</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,21 +250,22 @@
     <MESSAGE value="Login Logout İşlemleri Yapıldı" />
     <MESSAGE value="Üye Paneli Profil Bilgileri Yapıldı" />
     <MESSAGE value="Sepet sayı gösterme yapıldı" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sepet sayı gösterme yapıldı" />
+    <MESSAGE value="Başvuru Tamamlama Yapıldı" />
+    <option name="LAST_COMMIT_MESSAGE" value="Başvuru Tamamlama Yapıldı" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="274" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588861475163">
+    <state x="274" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589021111188">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="274" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1588861475163" />
+    <state x="274" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1589021111188" />
     <state x="442" y="171" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588684361554">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="442" y="171" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1588684361554" />
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1588863944329">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1588951855289">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588863944329" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588951855289" />
     <state x="213" y="23" key="DBNavigator.ProjectSettingsDialog" timestamp="1588684788228">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -276,22 +278,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1588851848337" />
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1588863979869">
+    <state x="507" y="270" key="Github.CreateGistDialog" timestamp="1589021093668">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1588863979869" />
-    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1588863979869">
+    <state x="507" y="270" key="Github.CreateGistDialog/0.0.1366.738@0.0.1366.738" timestamp="1589021093668" />
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1588951900775">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1588863979869" />
-    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1588863979868">
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1588951900775" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1588951900775">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1588863979868" />
-    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1588863979869">
+    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1588951900775" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1588951900775">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1588863979869" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1588951900775" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1588951900775">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1588951900775" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1588851862224">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -300,10 +306,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="424" y="17" width="916" height="708" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1588849018327" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1588863953592">
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1588951874406">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588863953592" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588951874406" />
     <state x="378" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1588791222655">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
