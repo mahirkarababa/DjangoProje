@@ -81,6 +81,7 @@ class UserProfile(models.Model):
     city = models.CharField(blank=True, max_length=30)
     country = models.CharField(blank=True, max_length=30)
     image = models.ImageField(blank=True, upload_to='images/users')
+    cv = RichTextUploadingField()
 
     def __str__(self):
         return self.user.username

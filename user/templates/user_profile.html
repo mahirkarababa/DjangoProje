@@ -41,15 +41,32 @@
                 {% include "user_panel.html" %}
 
             </div>
-
+            <div class="span12">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
         </div>
         <div class="row">
             <div class="span12">
 
+
                 <table class="table table-bordered">
 
                     <tr>
-                       <td ><img src="{{ profile.image.url }}" style="height:100px; width:100px;"></td>
+                        <th>
+                            <img class="pull-left" src="{{ profile.image.url }}" style="height:100px; width:100px;">
+                        </th>
+                        <td>
+                            <div class="pull-right">
+                                <a href="/user/update" class="btn btn-medium btn-theme">UPDATE PROFİLE</a>
+                                <a href="/user/password" class="btn btn-medium btn-theme">CHANGE PASSWORD</a>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="success">
                         <th>Name Surname</th>

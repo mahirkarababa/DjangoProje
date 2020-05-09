@@ -9,7 +9,7 @@ class ContactFormMessageAdmin(admin.ModelAdmin):
     list_filter = ['status']
 
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ['user_name','image_tag','phone','address','city','country']
+    list_display = ['user_name','image_tag','phone','address','city','country','cv']
 
 admin.site.register(ContactFormMessage, ContactFormMessageAdmin)
 admin.site.register(Setting)

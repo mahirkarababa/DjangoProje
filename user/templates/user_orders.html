@@ -1,0 +1,77 @@
+{% extends "homebase.html" %}
+
+{% block title %}{{ profile.user_name }} Orders{% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>User Orders</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">Orders</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="span12">
+                {% include "user_panel.html" %}
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="span12">
+
+                <h4>User Orders List</h4>
+                <table class="table table-bordered">
+
+                    <tr>
+                        <th class="text-left">ID</th>
+                        <th class="text-left">NAME</th>
+                        <th class="text-left">TOTAL</th>
+                        <th class="text-left">STATUS</th>
+                        <th class="text-left">DATE</th>
+                        <th class="text-left">DETAIL</th>
+                    </tr>
+                    {% for rs in orders %}
+                    <tr class="success">
+                        <td>{{ rs.id }}</td>
+                        <td>{{ rs.first_name }} {{ rs.last_name }}</td>
+                        <td>{{ rs.total }}</td>
+                        <td>{{ rs.status }}</td>
+                        <td>{{ rs.create_at }}</td>
+                        <td><a href="/user/orderdetail/{{ rs.id }}" class="btn btn-medium btn-theme">Detay</a> </td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+</section>
+
+
+{% endblock %}

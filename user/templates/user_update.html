@@ -1,0 +1,68 @@
+{% extends "homebase.html" %}
+
+{% block title %}Update Profile {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>Update Profile</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">Profile Update</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="span12">
+                {% include "user_panel.html" %}
+
+            </div>
+            <div class="span12">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <div class="media">
+                    <img class="pull-left" src="{{ user.userprofile.image.url }}" style="height:100px; width:100px;">
+                </div>
+                <form method="post" class="contactForm" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        {{ user_form.as_p }}
+                        {{ profile_form.as_p }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-medium btn-theme">UPDATE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</section>
+
+
+{% endblock %}
