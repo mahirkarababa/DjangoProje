@@ -1,3 +1,4 @@
+from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
 from django.db import models
@@ -5,6 +6,8 @@ from django.db import models
 # Create your models here.
 from django.forms import ModelForm, TextInput, Textarea
 from django.utils.safestring import mark_safe
+
+from content.models import Content
 
 
 class Setting(models.Model):
@@ -98,3 +101,22 @@ class UserProfileForm(ModelForm):
     class Meta:
         model = UserProfile
         fields = ['phone', 'address', 'city', 'country','image']
+
+
+class FAQ(models.Model):
+    STATUS = (
+        ('True', 'Evet'),
+        ('False', 'Hayır'),
+    )
+
+    ordernumber = models.IntegerField()
+    question = models.CharField(max_length=150)
+    answer = models.TextField(max_length=255)
+    status = models.CharField(max_length=10, choices=STATUS)
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.question
+        
+

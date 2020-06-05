@@ -1,0 +1,72 @@
+{% extends "homebase.html" %}
+
+{% block title %}Add Content{% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel="shortcut icon" href="{{ setting.icon.url}}" />
+
+{% endblock %}
+
+{% block content %}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>Add Content</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">Add Content</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="span12">
+                {% include "user_panel.html" %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="span12">
+
+                {% load static %}
+                <form method="post" class="contactForm" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        {{ form.media }}  <!--ckeditor ayarlarını getirir-->
+                        {{ form.as_p }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn-primary" type="submit">SAVE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</section>
+
+
+{% endblock %}

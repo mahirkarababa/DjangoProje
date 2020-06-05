@@ -1,0 +1,70 @@
+{% extends "homebase.html" %}
+
+{% block title %} Sık Sorulan Sorular  {% endblock %}
+{% block keywords %}{% endblock %}
+{% block description %}  {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+{% load static %}
+
+
+<script>
+    $( function() {
+        $( "#accordion" ).accordion({
+            collapsible: true
+        });
+    } );
+</script>
+{% endblock %}
+
+{% block content %}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>Sık Sorulan Sorular</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">Sık Sorulan Sorular</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+            <div class="span12">
+                <div id="accordion">
+                    {% for rs in faq %}
+                    <h3>{{rs.question}}</h3>
+                    <div>
+                        <p>
+                            {{rs.answer}}
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

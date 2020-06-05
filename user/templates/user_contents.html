@@ -1,0 +1,104 @@
+{% extends "homebase.html" %}
+
+{% block title %}My Contents{% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>My Contents</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">Contents</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="span12">
+                {% include "user_panel.html" %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="span12">
+
+                <a href="/user/addcontent/{{ rs.id }}" class="btn btn-medium btn-theme">ADD CONTENT</a>
+
+
+                <table class="table table-bordered">
+
+                    <tr>
+                        <th class="text-left"></th>
+                        <th class="text-left">TITLE</th>
+                        <th class="text-left">TYPE</th>
+                        <th class="text-left">MENU</th>
+                        <th class="text-left">GALLERY</th>
+                        <th class="text-left">STATUS</th>
+                        <th class="text-left">DATE</th>
+                        <th class="text-left">DETAIL</th>
+                    </tr>
+                    {% for rs in contents %}
+                    <tr class="success">
+                        <td>
+                            <a href="/content/{{ rs.id }}/{{ rs.slug }}">
+                                <img class="pull-left" src="{{ rs.image.url }}" style="height:50px; width:59px;">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/content/{{ rs.id }}/{{ rs.slug }}">
+                                <strong>{{ rs.title }}</strong>
+                            </a>
+                        </td>
+
+                        <td>{{ rs.type }}</td>
+                        <td>{{ rs.menu.title }}</td>
+                        <td>
+                            <a href="javascript:;" onclick="window.open('/user/contentaddimage/{{rs.id}}','gallery','height=600,width=800,top=50,left=150')">
+                                <img src="{% static '' %}img/gallery.png" height="40" width="40">
+                            </a>
+                        </td>
+                        <td>{{ rs.status }}</td>
+                        <td>{{ rs.create_at }}</td>
+                        <td><a href="/user/contentedit/{{ rs.id }}" class="btn btn-medium btn-theme">EDIT</a> </td>
+                        <td><a href="/user/contentdelete/{{ rs.id }}" class="btn btn-medium btn-theme" onclick="return confirm('Are you sure?')">DELETE</a> </td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+</section>
+
+
+{% endblock %}

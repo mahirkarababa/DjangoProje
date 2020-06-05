@@ -1,16 +1,72 @@
-    {% load static %}
-    <!-- divider -->
-    <div class="row">
-        <div class="span12">
-            <div class="solidline">
-            </div>
+{% load static %}
+<!-- divider -->
+<div class="row">
+    <div class="span12">
+        <div class="solidline">
         </div>
     </div>
-    <!-- end divider -->
+</div>
+<!-- end divider -->
 
-    <section id="content">
+<section id="content">
+
+    <div class="container">
 
         <div class="container">
+            <!-- Son İlanlar -->
+            <div class="row">
+                <div class="span6">
+                    <div class="span6">
+                        <h4><strong>İlanlar</strong></h4>
+                    </div>
+                    <div class="row">
+
+
+                        {% for rs in news %}
+                        <div class="span6">
+                            <div class="pricing-box-alt ">
+                                <div class="pricing-heading" style="height:30px">
+                                    <h6><a href="/content/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></h6>
+                                </div>
+
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="span6">
+                        <h4><strong>Duyurular</strong></h4>
+                    </div>
+                    <div class="row">
+
+
+                        {% for rs in announcements %}
+                        <div class="span6">
+                            <div class="pricing-box-alt ">
+                                <div class="pricing-heading" style="height:30px">
+                                    <h5><a href="/content/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></h5>
+                                </div>
+
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- divider -->
+            <div class="row">
+                <div class="span12">
+                    <div class="solidline">
+                    </div>
+                </div>
+            </div>
+            <!-- end divider -->
+
+
             <!-- Son İlanlar -->
             <div class="row">
                 <div class="span12">
@@ -51,40 +107,7 @@
                 </div>
             </div>
             <!-- end divider -->
-            <!-- Rastgele Kategoriler -->
-            <div class="row">
-                <div class="span12">
-                    <h4 class="heading">Rastgele <strong>Kategoriler</strong></h4>
-                    <hr>
-                    <div class="row">
-                        <section id="projects">
-                            <ul id="thumbs" class="portfolio">
-                                {% for rs in randomcategory %}
-                                <!-- Item Project and Filter Name -->
 
-                                <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
-                                    <div class="pricing-heading">
-                                        <h5>{{ rs.title }}</h5>
-                                    </div>
-                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" href="{{ rs.image.url }}">
-                                        <span class="overlay-img"></span>
-                                        <span class="overlay-img-thumb font-icon-plus"></span>
-                                    </a>
-                                    <!-- Thumb Image and Description -->
-                                    <img src="{{ rs.image.url }}" alt="{{ rs.title }}" style=" height:150px; width:270px;">
-
-                                </li>
-
-                                <!-- End Item Project -->
-
-                                {% endfor %}
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-            </div>
-            <!-- End Portfolio Projects -->
 
 
 
@@ -159,19 +182,19 @@
             </div>
 
         </div>
-    </section>
-    <section id="bottom">
-        <div class="container">
-            <div class="row">
-                <div class="span12">
-                    <div class="aligncenter">
-                        <div id="twitter-wrapper">
-                            <div id="twitter">
-                            </div>
+</section>
+<section id="bottom">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="aligncenter">
+                    <div id="twitter-wrapper">
+                        <div id="twitter">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
     </div>
+</section>
+</div>

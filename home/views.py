@@ -7,8 +7,9 @@ from django.shortcuts import render
 
 
 # Create your views here.
+from content.models import Menu, Content, CImages
 from home.forms import SearchForm, SignUpForm
-from home.models import Setting, ContactFormMessage, ContactFormu, UserProfile
+from home.models import Setting, ContactFormMessage, ContactFormu, UserProfile, FAQ
 from order.models import ShopCart
 from product.models import Product, Category, Images, Comment
 
@@ -18,6 +19,7 @@ def index(request):
     setting = Setting.objects.get(pk=1)
     sliderdata = Product.objects.all()[:4]
     category = Category.objects.all()
+    menu = Menu.objects.all()
     randomcategory = Category.objects.all().order_by('?')[:4]
     dayproducts = Product.objects.all()[:4]
 
@@ -26,9 +28,12 @@ def index(request):
 
     request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()  # COUNT THE İTEM İN SHOP CART
 
+    news = Content.objects.filter(type='ilan',status=True).order_by('-id')[:3]
+    announcements = Content.objects.filter(type='duyuru',status=True).order_by('-id')[:3]
 
     context = {'setting': setting,
                'category': category,
+               'menu': menu,
                'page':'home',
                'sliderdata':sliderdata,
                'dayproducts': dayproducts,
@@ -37,20 +42,26 @@ def index(request):
                'randomproducts': randomproducts,
                'randomcategory': randomcategory,
 
+               'news': news,
+               'announcements': announcements,
+
                }
     return render(request, 'index.html', context)
 
 def hakkimizda(request):
+    category = Category.objects.all()
     setting = Setting.objects.get(pk=1)
-    context = {'setting': setting, 'page':'hakkimizda'}
+    context = {'setting': setting, 'page':'hakkimizda','category':category}
     return render(request, 'hakkimizda.html', context)
 
 def referanslar(request):
+    category = Category.objects.all()
     setting = Setting.objects.get(pk=1)
-    context = {'setting': setting, 'page':'referanslarimiz'}
+    context = {'setting': setting, 'page':'referanslarimiz','category':category}
     return render(request, 'referanslarimiz.html', context)
 
 def iletisim(request):
+
     if request.method == 'POST':  # FORM POST EDİLDİYSE
         form = ContactFormu(request.POST)
         if form.is_valid():
@@ -63,10 +74,10 @@ def iletisim(request):
             data.save() #veritabanına kaydet
             messages.success(request, "Mesajınız başarı ile gönderilmiştir. Teşekkür Ederiz :) ")
             return HttpResponseRedirect('/iletisim')
-
+    category = Category.objects.all()
     setting = Setting.objects.get(pk=1)
     form = ContactFormu()
-    context = {'setting': setting, 'form':form}
+    context = {'setting': setting, 'form':form,'category':category}
     return render(request, 'iletisim.html', context)
 
 def category_products(request,id,slug):
@@ -81,15 +92,20 @@ def category_products(request,id,slug):
 
 def product_detail(request,id,slug):
     category = Category.objects.all()
-    product = Product.objects.get(pk=id)
-    images = Images.objects.filter(product_id=id)
-    comments = Comment.objects.filter(product_id=id,status='True')
-    context = {'product': product,
+    try:
+        product = Product.objects.get(pk=id)
+        images = Images.objects.filter(product_id=id)
+        comments = Comment.objects.filter(product_id=id,status='True')
+        context = {'product': product,
                'category': category,
                'images': images,
                'comments': comments,
                }
-    return render(request, 'product_detail.html', context)
+        return render(request, 'product_detail.html', context)
+    except:
+        messages.warning(request,"Hata! İlgili İçerik Bulunamadı  ")
+        link = "/error"
+        return HttpResponseRedirect(link)
 
 def product_search(request):
     if request.method == "POST":
@@ -97,14 +113,14 @@ def product_search(request):
         if form.is_valid():
 
             query = form.cleaned_data['query']  # formdan bilgiyi al
-            #catid = form.cleaned_data['catid']
+            catid = form.cleaned_data['catid']
 
-            products = Product.objects.filter(title__icontains=query)
+            #products = Product.objects.filter(title__icontains=query)
 
-            #if catid == 0:
-                #products = Product.objects.filter(title__icontains=query)
-            #else:
-                #products = Product.objects.filter(title__icontains=query,category_id=catid)
+            if catid == 0:
+                products = Product.objects.filter(title__icontains=query)
+            else:
+                products = Product.objects.filter(title__icontains=query,category_id=catid)
             category = Category.objects.all()
             context = {'products': products,
                        'query': query,
@@ -124,11 +140,10 @@ def product_search_auto(request):
             product_json = rs.title
             results.append(product_json)
         data = json.dumps(results)
-        return HttpResponse(q)
     else:
         data = 'fail'
     mimetype = 'application/json'
-    return HttpResponse(data,mimetype)
+    return HttpResponse(data, mimetype)
 
 def logout_view(request):
     logout(request)
@@ -148,8 +163,8 @@ def login_view(request):
 
     category = Category.objects.all()
     context = {
-               'category': category,
-               }
+        'category': category,
+    }
     return render(request, 'login.html', context)
 
 
@@ -162,9 +177,14 @@ def signup_view(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
+            #Create data in profile table for user
+            current_user=request.user
+            data=UserProfile()
+            data.user_id=current_user.id
+            data.image="images/users/user.png"
+            data.save()
+            messages.success(request, 'Hesabınız Yaratıldı')
             return HttpResponseRedirect('/')
-
-
 
     form = SignUpForm()
 
@@ -176,4 +196,52 @@ def signup_view(request):
     return render(request, 'signup.html', context)
 
 
+def menu(request,id):
+    try:
+        content = Content.objects.get(menu_id=id)
+        link='/content/'+str(content.id)+'/menu'
+        return HttpResponseRedirect(link)
+    except:
+        messages.warning(request,"Hata! İlgili İçerik Bulunamadı  ")
+        link = "/error"
+        return HttpResponseRedirect(link)
 
+def contentdetail(request,id,slug):
+    category = Category.objects.all()
+    menu = Menu.objects.all()
+    try:
+        content = Content.objects.get(pk=id)
+        images = CImages.objects.filter(content_id=id)
+        context = {
+        'content' : content,
+        'menu': menu,
+        'category': category,
+        'images': images,
+        }
+
+        return render(request,'content_detail.html',context)
+
+    except:
+        messages.warning(request,"Hata! İlgili İçerik Bulunamadı  ")
+        link = "/error"
+        return HttpResponseRedirect(link)
+
+def error(request):
+    category = Category.objects.all()
+    menu = Menu.objects.all()
+    context = {
+        'menu': menu,
+        'category': category,
+    }
+    return render(request, 'error_page.html', context)
+
+def faq(request):
+    category = Category.objects.all()
+    menu = Menu.objects.all()
+    faq = FAQ.objects.all().order_by('ordernumber')
+    context = {
+        'menu': menu,
+        'category': category,
+        'faq': faq,
+    }
+    return render(request, 'faq.html', context)

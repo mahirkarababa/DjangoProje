@@ -1,0 +1,85 @@
+{% extends "homebase.html" %}
+
+{% block title %}My Comments{% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>My Comments</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">Comments</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="span12">
+                {% include "user_panel.html" %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="span12">
+
+
+                <table class="table table-bordered">
+
+                    <tr>
+                        <th class="text-left"></th>
+                        <th class="text-left">PRODUCT</th>
+                        <th class="text-left">SUBJECT</th>
+                        <th class="text-left">COMMENT</th>
+                        <th class="text-left">STATUS</th>
+                        <th class="text-left">DATE</th>
+                        <th class="text-left"></th>
+                    </tr>
+                    {% for rs in comments %}
+                    <tr class="success">
+                        <td><a href="/product/{{ rs.product_id }}/{{ rs.product.slug }}"><img class="pull-left" src="{{ rs.product.image.url }}" style="height:50px; width:59px;"> </a></td>
+                        <td><a href="/product/{{ rs.product_id }}/{{ rs.product.slug }}"><strong>{{ rs.product.title }}</strong></a></td>
+                        <td>{{ rs.subject }}</td>
+                        <td>{{ rs.comment }}</td>
+                        <td>{{ rs.status }}</td>
+                        <td>{{ rs.create_at }}</td>
+                        <td><a href="/user/deletecomment/{{ rs.id }}" class="btn btn-medium btn-theme" onclick="return confirm('Are you sure?')">DELETE</a> </td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+</section>
+
+
+{% endblock %}

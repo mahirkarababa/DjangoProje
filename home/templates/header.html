@@ -8,6 +8,15 @@
     <header>
         <div class="container ">
             <!-- hidden top area toggle link -->
+            <div class="span6">
+            {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{message.tags}}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                </div>
             <div id="header-hidden-link">
                 <a href="/shopcart/" class="btn btn-primary" title="My Charts"><i class="icon-briefcase"></i> <strong>My Charts:</strong> {{ request.session.cart_items }} </a>
 
@@ -27,6 +36,7 @@
                                         <li><a href="/shopcart/"><i class="icon-briefcase"></i>Sepet</a></li>
                                         <li><a href="/user/orders"><i class="icon-bookmark"></i>Başvurularım</a></li>
                                         <li><a href="/user/comments"><i class="icon-comment"></i> Yorumlarım</a></li>
+                                        <li><a href="/user/contents"><i class="icon-book"></i> İlanlarım</a></li>
                                         <li><a href="/logout/"><i class="icon-signout"></i>Çıkış Yap</a></li>
                                     </ul>
                                 </li>
@@ -46,14 +56,45 @@
 
                 </div>
             </div>
+            <script>
+                $(function() {
+                    $("#query").autocomplete({
+                        source: "/search_auto/",
+                        select: function (event, ui) { //item selected
+                            AutoCompleteSelectHandler(event, ui)
+                        },
+                        minLength: 2,
+                    });
+                });
 
+                function AutoCompleteSelectHandler(event, ui)
+                {
+                    var selectedObj = ui.item;
+                }
+            </script>
             <div class="row">
                 <div class="span4">
-                    <div class="widget">
-                        <form action="/search/" method="post">
+                    <div class="col-sm-3">
+                       <form action="/search/" method="POST">
                             {% csrf_token %}
-                            <input id="query" name="query" placeholder="Type something" type="text" class="input-medium search-query">
-                            <button type="submit" class="btn btn-square btn-theme">Search</button>
+                            <div class="search_box pull-right">
+                                {% load mptt_tags  %}
+
+                                <label>Kategori Seç:</label>
+                                <select name="catid">
+                                    <option value="0">Kategorileri Gör</option>
+                                    {% recursetree category %}
+                                    {% if node.is_leaf_node %}<option value="{{ node.id }}">{{ node.title }}</option> {% endif %}
+                                    {% if not node.is_leaf_node %}
+                                    <optgroup label="{{node.title}}">
+                                        {{children}}
+                                    </optgroup>
+                                    {% endif %}
+                                    {% endrecursetree %}
+                                </select>
+                                <input id="query" name="query" type="text" placeholder="Search"/>
+                                <button class="fa fa-search"></button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -67,29 +108,31 @@
                                         <a href="/">Ana Sayfa </a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" >Categories<i class="icon-angle-down"></i></a>
+                                        <a href="/hakkimizda" >Hakkimizda<i class="icon-angle-down"></i></a>
                                         {% load mptt_tags %}
                                         <ul class="dropdown-menu">
 
-                                            {% recursetree category %}
+                                            {% if menu %}
+                                            {% recursetree menu %}
                                             <li class="dropdown">
-                                                <a href="/category/{{ node.id }}/{{ node.slug }}">{{ node.title }}{% if not node.is_leaf_node %} <i class="icon-angle-right"></i>{% endif %}</a>
+                                                <a href="/menu/{{ node.id }}">{{ node.title }}{% if not node.is_leaf_node %} <i class="icon-angle-right"></i>{% endif %}</a>
                                                 {% if not node.is_leaf_node %}
                                                 <ul class="dropdown-menu sub-menu-level1">
-                                                    <li><a href="/category/{{ node.slug }}">{{ children }}</a></li>
+                                                    <li><a href="#">{{ children }}</a></li>
                                                 </ul>
                                                 {% endif %}
                                             </li>
                                             {% endrecursetree %}
-
+                                            {% endif %}
 
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="/hakkimizda">Hakkımızda </a>
-                                    </li>
+
                                     <li>
                                         <a href="/referanslar">Referanslar </a>
+                                    </li>
+                                    <li>
+                                        <a href="/sss">SSS </a>
                                     </li>
                                     <li>
                                         <a href="/iletisim">İletişim </a>

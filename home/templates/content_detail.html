@@ -1,0 +1,67 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ content.title }} {% endblock %}
+{% block keywords %} {{ content.keywords }} {% endblock %}
+{% block description %} {{ content.description }} {% endblock %}
+
+{% block head %}
+<link rel="shortcut icon" href="{{ setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="inner-heading">
+                    <h2>Content Detail</h2></a>
+
+
+                </div>
+            </div>
+
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                    <li class="active">{{content.title}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="span6">
+                <!-- start flexslider -->
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <img src="{{content.image.url}}" alt="" style="height: 400px; width: 400px;"/>
+                        </li>
+                        {% for rs in images %}
+                        <li>
+                            <img src="{{ rs.image.url }}" alt="" style="height: 400px; width: 400px;"/>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <nav class="da-arrows">
+                        <span class="da-arrows-prev"></span>
+                        <span class="da-arrows-next"></span>
+                    </nav>
+                </div>
+                <!-- end flexslider -->
+
+
+            </div>
+            <div class="span6">
+                {{content.detail|safe}}
+            </div>
+
+        </div>
+
+</section>
+
+{% endblock %}
